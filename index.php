@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . '/Model/Movie.php';
+require_once __DIR__ . '/Model/Media.php';
 require_once __DIR__ . '/db/db.php';
 
 
@@ -22,11 +23,11 @@ require_once __DIR__ . '/db/db.php';
     ?>
 
     <div class="card m-5" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
+      <img src="<?php echo $movie->image?->file_name ?? 'https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-1-scaled-1150x647.png' ?>" class="card-img-top" alt="<?php echo $movie->image?->name ?>">
       <div class="card-body">
-      <h4 class="card-title"><?php echo $movie->title  ?></h4>
-      <h5><?php echo $movie->author  ?></h5>
-      <h6 class="text-success"><?php echo implode(", " , $movie->genre)  ?></h6>
+      <h4 class="card-title">Title: <?php echo $movie->title  ?></h4>
+      <h5>Author :<?php echo $movie->author  ?></h5>
+      <h6 class="text-success">Genre :<?php echo implode(", " , $movie->genre)  ?></h6>
       <strong>Year: <?php echo $movie->year  ?></strong>
       <p>Duration: <?php echo $movie->duration  ?></p>
       <p>Language: <?php echo $movie->language  ?></p>
