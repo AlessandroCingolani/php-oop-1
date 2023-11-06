@@ -17,12 +17,20 @@ class Movie{
   }
 
   public function convertMinute($_duration){
-    $this->duration = floor(($_duration / 60)).'.'.(float)($_duration % 60);
+    $this->duration = $_duration;
+    $hours = floor($_duration / 60);
+    $minutes = $_duration % 60;
+    if($this->duration < 1){
+      $converter = substr($this->duration, strpos($this->duration, '.') + 1);
+      $this->duration = "$converter Min";
+    }
+    $this->duration = $hours . "hr" . $minutes . "min";
+
   }
 
 }
 
-$nuovo_olimpo = new Movie('Nuovo Olimpo','Ferzan Özpetek',['drammatico','sentimentale'],2023,112,'italiano');
+$nuovo_olimpo = new Movie('Nuovo Olimpo','Ferzan Özpetek',['drammatico','sentimentale'],2023,120,'italiano');
 var_dump($nuovo_olimpo);
 
 ?>
