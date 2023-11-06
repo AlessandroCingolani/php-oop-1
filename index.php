@@ -1,39 +1,9 @@
 <?php
 
+require_once __DIR__ . '/Model/Movie.php';
 require_once __DIR__ . '/db/db.php';
 
-class Movie{
-  public $title;
-  public $author;
-  public $genre;
-  public $year;
-  public $duration;
-  public $language;
 
-  // construct con i parametri richiesti
-  public function __construct(string $_title,string $_author,array $_genre,int $_year,int $_duration,string $_language){
-    $this->title = $_title;
-    $this->author = $_author;
-    $this->genre = $_genre;
-    $this->year = $_year;
-    $this->convertMinute($_duration);
-    $this->language = $_language;
-  }
-
-  // funzione per ottere ore minuti dai minuti totali forniti
-  public function convertMinute($_duration){
-    $this->duration = $_duration;
-    $hours = floor($_duration / 60);
-    $minutes = $_duration % 60;
-    if($this->duration < 1){
-      $converter = substr($this->duration, strpos($this->duration, '.') + 1);
-      $this->duration = "$converter Min";
-    }
-    $this->duration = $hours . "h " . $minutes . "m";
-
-  }
-
-}
 
 ?>
 
@@ -46,7 +16,7 @@ class Movie{
   <title>OOP-1</title>
 </head>
 <body>
-  <div class="container d-flex mt-5">
+  <div class="container d-flex flex-wrap mt-5">
     <?php
     foreach($movies as $movie):
     ?>
