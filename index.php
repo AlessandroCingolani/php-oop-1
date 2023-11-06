@@ -24,7 +24,7 @@ class Movie{
       $converter = substr($this->duration, strpos($this->duration, '.') + 1);
       $this->duration = "$converter Min";
     }
-    $this->duration = $hours . "hr" . $minutes . "min";
+    $this->duration = $hours . "h " . $minutes . "m";
 
   }
 
