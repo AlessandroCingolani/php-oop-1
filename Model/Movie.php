@@ -1,6 +1,7 @@
 <?php
 
 class Movie{
+  public $image;
   public $title;
   public $author;
   public $genre;
@@ -9,7 +10,7 @@ class Movie{
   public $language;
 
   // construct con i parametri richiesti
-  public function __construct(string $_title,string $_author,array $_genre,int $_year,int $_duration,string $_language){
+  public function __construct(Media $_image = null,string $_title,string $_author,array $_genre,int $_year,int $_duration,string $_language){
     $this->title = $_title;
     $this->author = $_author;
     $this->genre = $_genre;
@@ -28,7 +29,11 @@ class Movie{
       $this->duration = "$converter Min";
     }
     $this->duration = $hours . "h " . $minutes . "m";
+  }
 
+  //  setto immagine
+  public function setImage(Media $_image){
+    $this->image = $_image;
   }
 
 }
