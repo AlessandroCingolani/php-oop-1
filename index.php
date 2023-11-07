@@ -21,15 +21,25 @@ require_once __DIR__ . '/db/db.php';
     foreach($media_list as $media):
     ?>
 
-    <div class="card m-5" style="width: 18rem;">
+    <div class="card m-5" style="width: 20rem;">
       <img src="<?php echo $media ->image->file_name ?? 'img/img-not-found.png' ?>" class="card-img-top" alt="<?php echo $media->image->name ?>">
       <div class="card-body">
         <h4 class="card-title">Title: <?php echo $media->title  ?></h4>
         <h5>Author :<?php echo $media->author  ?></h5>
         <h6 class="text-success">Genre :<?php echo implode(", " , $media->genre)  ?></h6>
         <h6 class="text-success">Actors :<?php echo implode(", " , $media->actors)  ?></h6>
+        <?php if (get_class($media) === 'Movie'): ?>
+          <p>Published year: <?php echo $media->published_year  ?></p>
+          <p>Duration: <?php echo $media->running_time  ?> Min</p>
+          <p>Category:<?php echo get_class($media) ?></p>
+        <?php else: ?>
+          <p>Year: <?php echo $media->aired_from_year  ?></p>
+          <p>State: <?php echo $media->aired_to_year ? $media->aired_to_year : 'In corso' ?> </p>
+          <p>Episode: <?php echo $media->number_of_episodes  ?></p>
+          <p>Seasons: <?php echo $media->number_of_seasons  ?></p>
+          <p>Category:<?php echo get_class($media) ?></p>
+        <?php endif; ?>
         <p>Language: <?php echo $media->language  ?></p>
-        <p>Type:<?php echo get_class($media)  ?></p>
       </div>
     </div>
     <?php endforeach; ?>
