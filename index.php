@@ -24,10 +24,10 @@ require_once __DIR__ . '/db/db.php';
     <div class="card m-5" style="width: 20rem;">
       <img src="<?php echo $media ->image->file_name ?? 'img/img-not-found.png' ?>" class="card-img-top" alt="<?php echo $media->image->name ?>">
       <div class="card-body">
-        <h4 class="card-title">Title: <?php echo $media->title  ?></h4>
-        <h5>Author :<?php echo $media->author  ?></h5>
-        <h6 class="text-success">Genre :<?php echo implode(", " , $media->genre)  ?></h6>
-        <h6 class="text-success">Actors :<?php echo implode(", " , $media->actors)  ?></h6>
+        <h4 class="card-title text-danger">Title: <?php echo $media->title  ?></h4>
+        <h5 class="text-primary">Author :<?php echo $media->author  ?></h5>
+        <h6>Genre :<?php echo implode(", " , $media->genre)  ?></h6>
+        <h6>Actors :<?php echo implode(", " , $media->actors)  ?></h6>
         <?php if (get_class($media) === 'Movie'): ?>
           <p>Published Year: <?php echo $media->published_year  ?></p>
           <p>Duration: <?php echo $media->running_time  ?> Min</p>
