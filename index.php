@@ -29,7 +29,7 @@ require_once __DIR__ . '/db/db.php';
         <h6 class="text-success">Genre :<?php echo implode(", " , $media->genre)  ?></h6>
         <h6 class="text-success">Actors :<?php echo implode(", " , $media->actors)  ?></h6>
         <?php if (get_class($media) === 'Movie'): ?>
-          <p>Published year: <?php echo $media->published_year  ?></p>
+          <p>Published Year: <?php echo $media->published_year  ?></p>
           <p>Duration: <?php echo $media->running_time  ?> Min</p>
           <p>Category:<?php echo get_class($media) ?></p>
         <?php else: ?>
