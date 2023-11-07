@@ -22,7 +22,7 @@ require_once __DIR__ . '/db/db.php';
     ?>
 
     <div class="card m-5" style="width: 18rem;">
-      <img src="<?php echo $media->image?->file_name ?? 'https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-1-scaled-1150x647.png' ?>" class="card-img-top" alt="<?php echo $media->image?->name ?>">
+      <img src="<?php echo $media ->image->file_name ?? 'img/img-not-found.png' ?>" class="card-img-top" alt="<?php echo $media->image->name ?>">
       <div class="card-body">
         <h4 class="card-title">Title: <?php echo $media->title  ?></h4>
         <h5>Author :<?php echo $media->author  ?></h5>

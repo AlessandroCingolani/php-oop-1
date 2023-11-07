@@ -10,6 +10,7 @@ class Production{
 
   // construct con i parametri richiesti
   public function __construct(Media $_image = null,string $_title,string $_author,array $_genre,array $_actors,string $_language){
+    $this->image = $_image;
     $this->title = $_title;
     $this->author = $_author;
     $this->genre = $_genre;
