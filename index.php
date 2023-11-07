@@ -5,9 +5,9 @@ require_once __DIR__ . '/Model/TvSerie.php';
 require_once __DIR__ . '/Model/Media.php';
 require_once __DIR__ . '/db/db.php';
 
-$test_movie = new Movie(new Media('', 'Copertina'),'Nuovo Olimpo','Ferzan Özpetek',['drammatico','sentimentale'],'italiano',2021,112);
+$test_movie = new Movie(new Media('', 'Copertina'),'Nuovo Olimpo','Ferzan Özpetek',['drammatico','sentimentale'],['asd','ciao'],'italiano',2021,112);
 
-$test_serie = new TvSerie(new Media('', 'Copertina'),'Pokemon','Ash',['drammatico','sentimentale'],'italiano',1990,2023,100,7);
+$test_serie = new TvSerie(new Media('', 'Copertina'),'Pokemon','Ash',['drammatico','sentimentale'],['Misty','Brok','Ash'],'italiano','Settembre 1990',100,7);
 
 var_dump($test_movie);
 var_dump($test_serie);
