@@ -5,7 +5,7 @@ class Media {
   public $name;
   public $type = "image";
 
-public function __construct(string $_file_name,string $_name){
+public function __construct($_file_name,$_name){
   $this->file_name = $_file_name;
   $this->name = $_name;
 }
