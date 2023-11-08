@@ -10,6 +10,13 @@ class Movie extends Production
   {
     parent::__construct($_image, $_title, $_author, $_genre, $_actors, $_language, $_year);
     $this->published_year = parent::getYear();
-    $this->running_time = $_running_time;
+
+    // error per numero minore di zero o maggiore del film piu lungo esistente
+    if ($_running_time > 0 && $_running_time <= 43200) {
+      $this->running_time = $_running_time;
+    } else {
+      throw new Exception('Inserire minuti corretti');
+    }
+    // $this->running_time = $_running_time;
   }
 }
