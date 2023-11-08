@@ -1,6 +1,7 @@
 <?php
 
-class Production{
+class Production
+{
   public $image;
   public $title;
   public $author;
@@ -9,20 +10,28 @@ class Production{
   public $language;
 
   // construct con i parametri richiesti
-  public function __construct(Media $_image = null,string $_title,string $_author,array $_genre,array $_actors,string $_language){
+  public function __construct(Media $_image = null, string $_title, string $_author, array $_genre, array $_actors, string $_language)
+  {
     $this->image = $_image;
     $this->title = $_title;
     $this->author = $_author;
     $this->genre = $_genre;
-    $this->actors = $_actors;
+
+    // error per array attori vuoto
+    if (empty($_actors)) {
+      throw new Exception('Ci deve essere almeno un attore');
+    } else {
+      $this->actors = $_actors;
+    }
+
     $this->language = $_language;
   }
 
 
 
   //  setto immagine
-  public function setImage(Media $_image){
+  public function setImage(Media $_image)
+  {
     $this->image = $_image;
   }
-
 }
